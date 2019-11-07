@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="init"
+	default-destroy-method="destory"
+	default-lazy-init="true"
+	>
+	
+	
+	<bean class="com.ruda.s2.Engine"></bean>
+	<bean class="com.ruda.s2.Car" id="car" init-method="init" destroy-method="destory"></bean>
  
 </beans>
