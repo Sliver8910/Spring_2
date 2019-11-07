@@ -3,6 +3,9 @@ package com.ruda.s2;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Car {
 	private Engine engine;
 	private Wheel wheel;
