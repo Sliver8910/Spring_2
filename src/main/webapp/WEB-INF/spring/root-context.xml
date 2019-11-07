@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- Engine engine = new Engine() -->
+	<bean class="com.ruda.s2.Engine" id="engine">
+		<!--  setter 호출 -->
+		<property name="fuel" value="Gasoline"></property>
+		<property name="hp" value="300"></property>
+	</bean>
+
+	<!-- Wheel wheel = new Wheel() -->
+	<bean class="com.ruda.s2.Wheel" id="wheel" lazy-init="false">
+		<!-- constructor 호출  -->
+		<!-- <constructor-arg name="brand" value="Kumho"></constructor-arg>
+		<constructor-arg name="size" value="20"></constructor-arg>
+		 -->
+		<constructor-arg index="0" value="Michelin"></constructor-arg>
+		 <constructor-arg index="1" value="25"></constructor-arg>
+		 
+		 <!-- <constructor-arg type="java.lang.String" value ="Kumho" ></constructor-arg>
+		 <constructor-arg type="java.lang.Integer" value="21"></constructor-arg> -->
+	</bean>
+
+	<!-- Car car = new Car(); -->
+	<bean class="com.ruda.s2.Car" id="car">
+		<property name="wheel" ref="wheel"></property>
+		<property name="engine" ref="engine"></property>
+		<property name="price">
+			<map>
+				<entry>
+					<key>p1</key>
+					<value>200</value>
+				</entry>
+
+			</map>
+		</property>
+		
+		<property name="name">
+			<list>
+				<value>ruda</value>
+				<value>iu</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>
